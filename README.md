@@ -1,28 +1,31 @@
 <div align="center">
-   <a href="https://po-jui.github.io/vue3-ecommerce-pojui/" title="Belle journée" target="_blank">
+   <a href="https://po-jui.github.io/fullstack-ecommerce-pojui/" title="Belle journée" target="_blank">
       <img src="https://imgur.com/GdDwEDG.png" alt="CandleStudio" width="100">
    </a>
    <h1>fullstack-ecommerce-pojui 電商網站</h1>
 </div>
 
-vue3-ecommerce-pojui 是一個基於 Vue.js + Firebase 建構而成的電子商務網站，支援 RWD，UI 皆以 SCSS 並遵循 OOCSS 手刻而成，強調樣式的模組化及可重用性，平台使用者主要可分為管理員 (admin)、會員 (member) 兩種身分，管理員可依照主題快速擴展商店，會員可透過前台購物功能進行消費等行為。
+fullstack-ecommerce-pojui 是一個基於 Vue.js + Express.js + Firebase 建構而成的電子商務網站，該專案為原 vue3-ecommerce-pojui 專案的升級版，支援 RWD，UI 皆以 SCSS 並遵循 OOCSS 手刻而成，強調樣式的模組化及可重用性，平台使用者主要可分為管理員 (admin)、會員 (member) 兩種身分，管理員可依照主題快速擴展商店，會員可透過前台購物功能進行消費等行為。
 
 ## 線上演示
 
 - Demo：https://fullstack-ecommerce-pojui.zeabur.app/
 - 備用 Demo 網址：https://po-jui.github.io/fullstack-ecommerce-pojui/
+- API Doc：https://github.com/Po-Jui/fullstack-ecommerce-pojui-backend
 
 ## 設計說明
 
-這個專案使用 Vue 3 結合 Firebase 雲端資料庫，主要目的是練習 API 串接與資料庫操作，同時強化和更新框架的應用知識。API 的部分使用六角學院提供的練習 API 進行串接，而 Firebase 資料庫則負責儲存會員和訂單資訊。專案中採用了 Bootstrap 5 和 Vuetify 3 作為 UI 框架，並且支援響應式網頁設計 (RWD)。
+這個專案使用 Vue 3 結合 Firebase 雲端資料庫，主要目的是練習串接自製的後端 API 與資料庫操作，同時強化和更新前後端框架的應用知識。其中 Firebase 資料庫負責儲存會員和訂單資訊。專案中採用了 Bootstrap 5 和 Vuetify 3 作為 UI 框架，並且支援響應式網頁設計 (RWD)。
 
 - 管理員後台功能 (商品管理、訂單管理、優惠卷管理) ✔
 - 會員前台購物功能 (購物車、結帳付款、歷史訂單、修改個人資料) ✔
+- 後台圖片上傳 (使用 TinyPNG 進行壓縮) ✔
 
 ## 專案功能
 
 - 使用 Firebase Authentication 管理用戶
-- 使用 Firebase Realtime Database 操作資料庫
+- 使用 Firebase Firestore Database 操作資料庫
+- 使用 Firebase Storage 上傳圖片
 - 購物車 (CRUD)
 - 商品管理 (CRUD)
 - 優惠卷管理 (CRUD)
@@ -46,11 +49,20 @@ vue3-ecommerce-pojui 是一個基於 Vue.js + Firebase 建構而成的電子商�
    - zeabur Deployment
    - github Deployment
 
-2. 代碼風格
+2. 後端
+
+   - Prettier
+   - Node.js / Express.js
+   - Firebase
+   - Cookie
+   - RESTful API
+   - Vercel Deployment
+
+3. 代碼風格
 
    - Prettier
 
-3. 額外插件
+4. 額外插件
 
    - vuetify
    - bootstrap
@@ -62,7 +74,7 @@ vue3-ecommerce-pojui 是一個基於 Vue.js + Firebase 建構而成的電子商�
    - vue-sweetalert2
    - vue3-loading-overlay
 
-4. 其他
+5. 其他
 
    - Responsive Grid System
    - Theme Color
@@ -249,14 +261,8 @@ npm install
 
 請自行創建 `.env` 檔案，並依據下方內容調整相關欄位。
 
-#### API 申請 - [六角學院課程練習 API 申請](https://vue3-course-api.hexschool.io/)
-
-```env!
-# API (到六角學院申請)
-VUE_APP_API = # API 介面
-VUE_APP_PATH = # API 路徑
-
 # Firebase (申請後會給)
+
 VUE_APP_FIREBASE_API_KEY = Firebase API 金鑰
 VUE_APP_FIREBASE_AUTH_DOMAIN = Firebase 認證域名
 VUE_APP_FIREBASE_PROJECT_ID = Firebase 專案 ID
@@ -264,8 +270,13 @@ VUE_APP_FIREBASE_STORAGE_BUCKET = Firebase 儲存空間
 VUE_APP_FIREBASE_MESSAGING_SENDER_ID = Firebase 訊息發送者 ID
 VUE_APP_FIREBASE_APP_ID = Firebase 應用程式 ID
 VUE_APP_FIREBASE_MEASUREMENT_ID = Firebase 測量 ID
+
+# 後端 API
+
+VUE_APP_CUSTOM_API = 後端 API URL
 ...
-```
+
+````
 
 ### Firebase 設定
 
@@ -276,7 +287,7 @@ VUE_APP_FIREBASE_MEASUREMENT_ID = Firebase 測量 ID
 
 ```bash
 npm run serve
-```
+````
 
 ### 開啟專案
 
