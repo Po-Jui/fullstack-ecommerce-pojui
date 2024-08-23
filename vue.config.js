@@ -24,6 +24,6 @@ module.exports = defineConfig({
   // 根據環境變數動態設置 publicPath
   publicPath:
     process.env.DEPLOY_ENV === "GH_PAGES"
-      ? "/vue3-ecommerce-pojui/" // GitHub Pages
+      ? "/fullstack-ecommerce-pojui/" // GitHub Pages
       : "./", // Zeabur 或其他環境
 });

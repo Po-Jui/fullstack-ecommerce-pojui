@@ -9,8 +9,8 @@ vue3-ecommerce-pojui 是一個基於 Vue.js + Firebase 建構而成的電子商�
 
 ## 線上演示
 
-- Demo：https://pojui-ecommerce.zeabur.app/
-- 備用 Demo 網址：https://po-jui.github.io/vue3-ecommerce-pojui/
+- Demo：https://fullstack-ecommerce-pojui.zeabur.app/
+- 備用 Demo 網址：https://po-jui.github.io/fullstack-ecommerce-pojui/
 
 ## 設計說明
 
