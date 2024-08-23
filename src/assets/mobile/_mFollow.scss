@@ -1,0 +1,131 @@
+@include desktop() {
+  // 沒有收藏商品
+  .no-follow {
+    font-size: 20px;
+  }
+  // 收藏結尾
+  .bg-follow-footer {
+    padding: 0.6em 0;
+  }
+  .m-footer-follow {
+    display: flex;
+    justify-content: space-around;
+  }
+  .knowledge-box {
+    h5 {
+      font-size: 20px !important;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+}
+@media (max-width: 915px) {
+  .follow-box {
+    margin-top: 20px;
+  }
+  // 收藏標題
+  .follow-title {
+    display: block;
+    color: #186b84;
+    h3 {
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+  // 商品排序
+  .follow-sort {
+    width: 100% !important;
+    color: #186b84 !important;
+    border: 1px solid #186b84 !important;
+  }
+  // 收藏的商品樣式
+  .followItem {
+    border-radius: 10px;
+    overflow: hidden;
+    background: $dark;
+    flex-direction: column;
+    .d-flex {
+      display: block !important;
+    }
+    .followItem-img {
+      margin: 0;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+  }
+  .followItem-content {
+    text-align: center;
+    h5 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+    .followItem-category {
+      font-size: 16px;
+      position: absolute;
+      background: #dd9760;
+      padding: 10px;
+      top: 0px;
+      left: 30px;
+      border-radius: 0px 0px 10px 10px;
+      box-shadow: 0 0 5px;
+      @include vrl;
+    }
+  }
+  .followItem-cart {
+    display: none;
+  }
+  .m-followItem-cart {
+    display: flex;
+    padding: 10px;
+    background: #15151547;
+    letter-spacing: 2px;
+    .m-folItem-origin-price {
+      font-size: 14px;
+      color: #b3adad;
+      text-decoration: line-through;
+    }
+    .m-folItem-price {
+      font-size: 16px;
+      color: #f5f3f3;
+    }
+  }
+  .m-fol-money {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .btn-folCart {
+    padding: 8px 30px;
+    background-color: $Cyan;
+    border-color: $Cyan;
+    &:hover {
+      background-color: #22829e;
+      border-color: #22829e;
+    }
+  }
+  // close
+  .follow-close {
+    font-size: 20px;
+    right: 10px;
+    color: #ffffff;
+    border-radius: 10%;
+    &:hover {
+      color: red;
+    }
+    &:focus {
+      outline: 0px;
+    }
+  }
+  // 沒有收藏商品
+  .no-follow,
+  .text-cyanine {
+    color: #ad5b1b !important;
+  }
+}

@@ -1,0 +1,102 @@
+.about-banner {
+  @include ban-box;
+  background-position: center top -200px;
+  background-image: url("https://images.unsplash.com/photo-1591711696773-c4b7fe4d3d74?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  height: 50vh;
+  .about-ban-tit {
+    position: absolute;
+    font-size: 28px;
+    right: 155px;
+    top: 160px;
+    color: #f7f7f7;
+    text-shadow: 0 3px 10px #020202;
+    letter-spacing: 3px;
+    .top-text {
+      transform: translateX(-93px);
+      margin-bottom: 20px;
+    }
+  }
+  .m-about-ban-tit {
+    display: none;
+  }
+}
+.about-content-box {
+  background: $white;
+  align-items: center;
+  position: relative;
+  .about-content-bg {
+    background-image: url("https://images.unsplash.com/photo-1620034949504-339c43e9cd56?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    height: 480px;
+    opacity: 0.8;
+    background-position: center;
+    background-size: cover;
+  }
+  .imgbox {
+    height: 280px;
+    position: absolute;
+    opacity: 0;
+    width: 300px;
+    bottom: 84px;
+    right: 0px;
+    box-shadow: 0 0 5px;
+    transition: all 1s;
+    background-size: cover;
+    background-position: center;
+    &.active {
+      z-index: 10;
+      opacity: 1;
+      right: -95px;
+    }
+  }
+  .about-content {
+    position: absolute;
+    border: 3px solid $dark;
+    padding: 5em 4em;
+    right: -30px;
+  }
+  .about-intro {
+    padding: 0px 18px;
+    text-align: justify;
+    line-height: 28px;
+    font-size: 20px;
+  }
+  .about-intro-inner-title {
+    font-family: "Chewy", cursive;
+    font-weight: 400;
+  }
+}
+.m-about-box {
+  display: none;
+}
+.about-footer,
+.m-about-footer {
+  background-image: url("https://images.unsplash.com/photo-1628430382950-8a5a58667c34?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  display: flex;
+  justify-content: center;
+  padding: 5em;
+  background-position: center bottom -260px;
+  background-size: cover;
+  opacity: 0.8;
+  height: 330px;
+  h2 {
+    text-shadow: 1px 1px 5px #474843;
+    color: $white;
+    font-family: "Chewy", cursive;
+    font-weight: 400;
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 28px;
+    text-shadow: 1px 1px 5px #474843;
+    color: $white;
+  }
+  p {
+    color: $white;
+    font-size: 18px;
+    text-shadow: 2px 2px 10px #474843;
+  }
+}
+
+.m-about-footer {
+  display: none;
+}

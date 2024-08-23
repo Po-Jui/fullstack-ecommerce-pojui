@@ -1,0 +1,127 @@
+.follow-banner {
+  @include ban-box;
+  background-position: center;
+  background-image: url("https://images.unsplash.com/photo-1464054313797-e27fb58e90a9?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  h2 {
+    @include ban-tit;
+  }
+}
+.follow-box {
+  margin-top: 50px;
+}
+// 沒有收藏商品
+.no-follow {
+  text-align: center;
+  color: #186b84;
+  p {
+    margin-bottom: 10px;
+  }
+}
+// 收藏標題
+.follow-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid;
+  margin-bottom: 20px;
+  color: #186b84;
+  h3 {
+    font-size: 20px;
+    line-height: 24px;
+    padding-bottom: 5px;
+  }
+  // 商品排序
+  .follow-sort {
+    color: #186b84;
+    border: 1px solid #186b84;
+    width: 25%;
+  }
+}
+// 收藏的商品樣式
+.followItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background: $dark;
+  box-shadow: 0 1px 6px;
+  border-radius: 10px;
+}
+.followItem-img {
+  margin: 5px 20px 0 5px;
+  height: 120px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.followItem-content {
+  color: whitesmoke;
+  letter-spacing: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  h5 {
+    font-weight: bolder;
+    font-size: 18px;
+  }
+  p {
+    font-size: 14px;
+  }
+  .followItem-category {
+    font-weight: 1000;
+    font-size: 12px;
+    border-radius: 10px;
+    color: $dark;
+    text-align: center;
+    padding: 2px 5px;
+    background: #55d2b3;
+  }
+}
+.followItem-cart {
+  width: 230px;
+  padding: 5px;
+  margin-top: 60px;
+  border-radius: 10px 0px 0px 10px;
+  background: #15151547;
+  .followItem-origin-price {
+    font-size: 12px;
+    color: #b3adad;
+    text-decoration: line-through;
+  }
+  .followItem-price {
+    font-size: 14px;
+    color: #f5f3f3;
+  }
+  button {
+    width: 100%;
+    font-size: 12px;
+  }
+}
+.m-followItem-cart {
+  display: none;
+}
+// close
+.follow-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 0;
+  color: #ffffff;
+  background: #00000000;
+  &:hover {
+    color: red;
+  }
+  &:focus {
+    outline: 0px;
+  }
+}
+.bg-follow-footer {
+  background-image: url("https://st5.depositphotos.com/35914836/63547/i/600/depositphotos_635479512-stock-photo-brown-wooden-wall-texture-background.jpg");
+  background-size: cover;
+  padding: 2em 0;
+  h4 {
+    font-size: 24px;
+    letter-spacing: 5px;
+    color: $white;
+  }
+}

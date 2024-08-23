@@ -1,0 +1,40 @@
+// 勾選按鈕樣式
+.modal-checkbox > input[type="checkbox"] { 
+  display: none; 
+}
+
+.modal-checkbox > input[type=checkbox] + label{
+  position: relative;
+  color: $org;
+  letter-spacing: 1px;
+  font-size: 18px;
+  padding-left: 2.2em;
+  font-family: Microsoft JhengHei;
+}
+
+.modal-checkbox > input[type="checkbox"] + label:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $org;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: .6;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+.modal-checkbox > input[type="checkbox"]:checked + label:before {
+  width: 10px;
+  top: -5px;
+  left: 5px;
+  border-radius: 0;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  display: block;
+}

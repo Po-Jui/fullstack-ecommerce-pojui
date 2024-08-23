@@ -1,0 +1,31 @@
+@mixin btn-ami {
+  font-weight: bold;
+  outline: 1px solid;
+  outline-offset: 0px;
+  text-shadow: none;
+  -webkit-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  -o-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+@mixin ban-box {
+  height: 250px;
+  box-shadow: 0 1px 15px inset;
+  background-size: cover;
+}
+@mixin ban-tit{
+  font-size: 36px;
+  padding-top: 110px;
+  color: #f7f7f7;
+  font-weight: bolder;
+  text-shadow: 0 3px 10px #020202;
+  letter-spacing: 3px;
+}
+@mixin btn-active{
+  color: $Cyan;
+  font-weight: bolder;
+  border-left: 5px solid;
+}
+@mixin vrl{
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}

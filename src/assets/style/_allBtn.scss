@@ -1,0 +1,135 @@
+.btn-home {
+  font-size: 18px;
+  color: $white;
+  &:hover {
+    color: $white;
+    text-decoration: underline;
+  }
+}
+.btn-signOut {
+  color: $white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  &:hover {
+    color: $white;
+    box-shadow: 0 0 10px inset #f1eded;
+  }
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: 0;
+  }
+}
+// 產品列表
+.btn-shopping,
+.btn-details {
+  font-weight: bolder;
+  color: $white !important;
+  letter-spacing: 1px;
+  padding: 10px;
+}
+.btn-details {
+  &:hover {
+    background-color: #2a2e2dde;
+  }
+}
+.btn-shopping {
+  border-radius: 0 !important;
+  // background-color: $light-org;
+  background-color: $Cyan;
+  &:hover {
+    background-color: #084e00fa;
+  }
+  &:disabled {
+    background-color: #cccccc; /* Disabled background color */
+    color: #000000 !important; /* Disabled text color */
+  }
+}
+// 購物車
+.btn-outline-primary {
+  color: #000000;
+  border-color: #000000;
+  &:hover {
+    color: $white;
+    background-color: #000000;
+    border-color: #000000;
+  }
+}
+.btn-outline-danger-trash {
+  color: red !important;
+  border: 0 !important;
+  &:hover {
+    background-color: #000000;
+  }
+}
+.btn-del-all {
+  color: red !important;
+  height: 30px;
+  &:hover {
+    &::after {
+      float: left;
+      width: 100%;
+    }
+  }
+  &::after {
+    float: right;
+    height: 2px;
+    background: red;
+  }
+}
+// 優惠券按鈕
+.coupon-btn {
+  letter-spacing: 1px;
+  color: $org !important;
+  border-color: $org;
+  &:hover {
+    color: $main-col !important;
+    background: $org;
+  }
+}
+// 送出訂單
+.btn-send-order {
+  font-weight: bolder;
+  color: $white !important;
+  letter-spacing: 1px;
+  font-size: 18px;
+  border-radius: 5px !important;
+  background-color: $Cyan;
+  &:hover {
+    background-color: #084e00fa;
+  }
+  &:disabled {
+    background-color: #cccccc; /* Disabled background color */
+    color: #000000 !important; /* Disabled text color */
+  }
+}
+
+/*-- 分頁 --*/
+.page-item.active {
+  .page-link {
+    background-color: #d96025d9;
+    border-color: #d96025d9;
+  }
+}
+.page-link {
+  color: #16718c;
+  &:hover {
+    color: #16718c;
+  }
+}
+.page-flex {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+// 登入
+.login-btn {
+  padding: 5px;
+  margin-top: 1em;
+  color: $white;
+  box-shadow: 0 1px 5px #211f1f61;
+  &:hover {
+    color: $white;
+  }
+}

@@ -1,0 +1,61 @@
+@mixin iconAnimate {
+  position: absolute;
+  top: 2px;
+  transform: translateY(0px);
+}
+.back-logo {
+  a {
+    color: #fff;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+.back-menu {
+  overflow: hidden;
+  position: relative;
+  padding: 5px 15px 5px 0;
+  width: 100px;
+  a {
+    color: #fff;
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+.ani {
+  .home-span,
+  .sign-span {
+    position: absolute;
+    display: none;
+  }
+  .home-span {
+    left: 3px;
+  }
+  .sign-span {
+    right: 19px;
+  }
+  .opt-home-icon,
+  .opt-signout-icon {
+    @include iconAnimate;
+  }
+  .opt-home-icon {
+    left: 7px;
+  }
+  .opt-signout-icon {
+    right: 21px;
+  }
+  &:hover {
+    .home-span,
+    .sign-span {
+      display: block;
+      font-weight: bold;
+      font-family: Microsoft JhengHei;
+    }
+    .opt-home-icon,
+    .opt-signout-icon {
+      transform: translateY(-50px);
+    }
+  }
+}

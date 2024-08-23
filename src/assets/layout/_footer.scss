@@ -1,0 +1,59 @@
+.footer-navbar {
+  padding: 1.5em 2em;
+  background-color: $dark;
+  box-shadow: 0 0 5px $dark;
+  color: $light;
+}
+.rwd-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.conn {
+  letter-spacing: 1px;
+  ul {
+    height: 40px;
+    font-size: 20px;
+    a {
+      color: $light;
+    }
+  }
+  p {
+    color: #a9a1a1;
+  }
+}
+.footer-logo > a {
+  font-size: 28px;
+  letter-spacing: 2px;
+  text-shadow: 0 3px 8px #1b1717;
+  color: $light;
+  font-family: "Chewy", cursive;
+  font-weight: 400;
+  text-decoration: none;
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+}
+.icon-box {
+  li {
+    list-style-type: none;
+  }
+  a {
+    color: $light;
+    .fa-brands {
+      transform: rotateY(0deg) !important;
+      transition: all 0.6s !important;
+      font-size: 24px;
+    }
+    &:hover {
+      .fa-brands {
+        transform: rotateY(360deg) !important;
+      }
+    }
+  }
+  p {
+    padding-top: 3px;
+    color: #a9a1a1;
+  }
+}

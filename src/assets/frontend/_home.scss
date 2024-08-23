@@ -1,0 +1,214 @@
+// banner
+.home-bg {
+  background: $white;
+}
+.home-banner,
+.home-banner-two,
+.home-banner-three {
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+.home-banner {
+  background-image: url("https://images.unsplash.com/photo-1503926359680-9ddd5b2bcbdc?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+.home-banner-two {
+  background-image: url("https://images.unsplash.com/photo-1608085021978-6981f6993f9c?q=80&w=1820&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+.home-banner-three {
+  background-image: url("https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg");
+}
+.swiper-pb {
+  padding-bottom: 2em !important;
+}
+.banner-tit-box {
+  position: absolute;
+  top: 350px;
+  left: 200px;
+  .banner-tit {
+    background: #ffffff38;
+    padding: 1em;
+    position: absolute;
+    font-size: 36px;
+    color: $dark;
+    letter-spacing: 3px;
+    h1 {
+      font-size: 34px;
+      font-family: "chewy", cursive;
+    }
+  }
+}
+.go-btn {
+  font-size: 24px;
+}
+.down-box {
+  display: inherit;
+  background: #b9c3c8bd;
+
+  padding: 0px 8px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 50px;
+  left: 48.75%;
+  a {
+    font-size: 24px;
+    color: $dark;
+  }
+  &:hover {
+    background: $dark;
+    a {
+      color: $light;
+    }
+  }
+}
+.swiper-mt {
+  bottom: 50px !important;
+  .swiper-pagination-bullet {
+    width: 20px;
+    height: 6px;
+    border-radius: 30%;
+    background-color: antiquewhite;
+  }
+}
+// news
+.m-news-group {
+  display: none;
+}
+.news-box {
+  letter-spacing: 1px;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  margin-bottom: 2em;
+  h3 {
+    color: #3d3c3c;
+    font-size: 28px;
+    font-weight: 900;
+  }
+  li {
+    margin-top: 5px;
+    padding: 10px 0;
+    border-bottom: 1px solid #7c8482;
+  }
+  p {
+    color: #303b5d;
+    font-size: 16px;
+  }
+  .date-new {
+    font-size: 14px;
+    color: #9a0804;
+  }
+}
+.divider-bg {
+  background-image: url("https://st4.depositphotos.com/1277251/38117/i/600/depositphotos_381177460-stock-photo-wooden-floor-smoke-light-dark.jpg");
+  background-size: cover;
+  max-height: 100px;
+  height: 100px;
+  h3 {
+    font-size: 32px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 2px 6px #211f1f;
+    letter-spacing: 5px;
+  }
+}
+// footer
+.home-footer {
+  padding: 50px 0;
+}
+.minor-img {
+  width: 70%;
+  height: 360px;
+  left: 14.5%;
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(71, 67, 67, 0.596);
+  }
+  .introTitle {
+    z-index: 2;
+    border: 2px solid #fff;
+    position: absolute;
+    left: 2.5%;
+    top: 2.5%;
+    height: 95%;
+    width: 95%;
+    h4 {
+      margin-top: 28px;
+      font-size: 28px;
+      margin-left: 20px;
+      color: white;
+      letter-spacing: 10px;
+      @include vrl;
+    }
+  }
+  .primary-img {
+    transition: all 0.5s;
+    position: absolute;
+    right: -15%;
+    top: 15%;
+    width: 80%;
+    height: 70%;
+    box-shadow: 0 1px 8px #272525;
+    background-position: center;
+    background-size: cover;
+    z-index: 2;
+  }
+  a {
+    color: transparent;
+    &:hover {
+      color: transparent;
+    }
+  }
+  &:hover {
+    .primary-img {
+      transform: translateX(30px);
+    }
+    .poles-img {
+      transform: translateX(-30px);
+    }
+  }
+}
+.poles-title > h4 {
+  float: right;
+  margin-left: 0;
+  margin-right: 20px;
+}
+.poles-img {
+  left: -15%;
+}
+.intro-box {
+  display: flex;
+  justify-content: center;
+  .int {
+    letter-spacing: 2px;
+    h5 {
+      font-size: 28px;
+      font-weight: 900;
+    }
+    p {
+      line-height: 28px;
+    }
+    .btn-outline-dark {
+      float: right;
+      font-weight: bold;
+      margin-top: 2em;
+      padding: 10px;
+    }
+  }
+}
+// footer
+.sup-mt {
+  margin-top: 22px;
+}

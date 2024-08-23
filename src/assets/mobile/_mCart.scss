@@ -1,0 +1,281 @@
+@include desktop() {
+  // 購物車
+  .m-cart-box {
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+    .row {
+      margin-right: 0px !important;
+      margin-left: 0px !important;
+    }
+  }
+  .none-commodity {
+    overflow: initial !important;
+  }
+  .commodity-box {
+    min-height: auto;
+    font-size: 20px;
+    p {
+      margin-top: 0 !important;
+      font-size: 18px;
+      line-height: 26px;
+    }
+    .text-dark {
+      font-size: 18px;
+    }
+    table {
+      td {
+        font-size: 18px;
+        .btn-sm {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .card-body {
+    h3 {
+      font-size: 22px;
+    }
+    p {
+      font-size: 18px;
+    }
+    .promotion {
+      font-size: 14px;
+    }
+  }
+  .check-box {
+    .checkout {
+      font-size: 20px;
+      padding: 5px 10px;
+    }
+  }
+  // 購物車結尾
+  .m-footer-cart {
+    display: flex;
+    justify-content: space-around;
+  }
+  // 訂單
+  .cost-list-box {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    // input,
+    // .m-coupon {
+    //   height: 48px !important;
+    // }
+  }
+  .order-total-box {
+    letter-spacing: 2px;
+    h3 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+  .text-muted {
+    color: #4d5154 !important;
+  }
+  .client-form-box {
+    padding: 0px !important;
+    .form-data-box {
+      box-shadow: 0 0 0 !important;
+      border-radius: 0px;
+      background-image: linear-gradient(transparent, transparent);
+    }
+    h3 {
+      font-size: 24px;
+    }
+    label {
+      font-size: 18px;
+    }
+  }
+  .mobile-flex {
+    flex-direction: column-reverse;
+  }
+  .sent-from-btn {
+    align-items: baseline;
+    flex-direction: column;
+    // .text-dark {
+    //   display: none;
+    // }
+  }
+  // .btn-check {
+  //   width: 100% !important;
+  // }
+  // .checkout {
+  //   font-size: 18px;
+  //   padding: 10px 8px;
+  //   margin-bottom: 10px;
+  // }
+  .m-checkout {
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    padding: 10px 8px;
+  }
+  .m-return {
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    padding: 10px 8px;
+  }
+  .btn-send-order {
+    display: none !important;
+  }
+  .back-to-cart {
+    display: none !important;
+  }
+  // 訂單付款
+  .order-data-box {
+    margin-top: 0 !important;
+    font-size: 18px;
+    h3 {
+      font-size: 24px;
+    }
+    .customer-data {
+      h4 {
+        font-size: 22px !important;
+      }
+      table {
+        font-size: 18px !important;
+      }
+    }
+  }
+  .footer-data-box {
+    a,
+    button {
+      font-size: 18px !important;
+    }
+  }
+  // 完成購物
+  .m-keepBuy {
+    font-size: 20px;
+  }
+  .px-rwd {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .modal-header {
+    .modal-title,
+    .fa-times {
+      font-size: 22px;
+    }
+  }
+  .modal-body {
+    h4 {
+      font-size: 22px;
+    }
+    table,
+    p {
+      font-size: 18px;
+    }
+  }
+  .modal-footer {
+    p {
+      font-size: 16px;
+    }
+  }
+  .m-success-box {
+    display: none;
+  }
+  .my-md {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
+@include pad() {
+  .commodity-box {
+    overflow: scroll;
+    table {
+      width: 150%;
+    }
+  }
+  // 訂單資料
+  .order-total-box,
+  .client-form-box {
+    h3 {
+      text-align: center;
+      padding-bottom: 10px !important;
+    }
+  }
+  .order-total-box {
+    margin: 0 !important;
+  }
+  .checkout,
+  .m-return {
+    font-size: 16px !important;
+  }
+  // 訂單付款
+  .my-sm {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .order-data-box {
+    margin-top: 0 !important;
+    font-size: 14px;
+    h3 {
+      font-size: 22px;
+    }
+    .customer-data {
+      h4 {
+        font-size: 20px !important;
+      }
+      table {
+        font-size: 14px !important;
+      }
+    }
+  }
+  .footer-data-box {
+    a,
+    button {
+      font-size: 16px !important;
+    }
+  }
+  // 完成購物
+  .success-box {
+    display: none;
+  }
+  .m-success-box {
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 20px;
+    background: linear-gradient(#117b6157, #ea701730),
+      url("https://images.unsplash.com/photo-1603897076223-17f346f02a03?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+    color: $white;
+    p {
+      letter-spacing: 5px;
+      font-size: 28px;
+    }
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .r-text {
+      transform: translateY(35px);
+      margin-bottom: 2em;
+    }
+    .order-logo {
+      font-size: 26px;
+      font-family: "Chewy", cursive;
+      font-weight: 400;
+      margin: 1em 0 2em 0;
+    }
+    button {
+      color: $white;
+      font-size: 20px;
+    }
+  }
+  .m-keepBuy {
+    margin-left: 45px;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  // modal
+  .px-rwd {
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+  }
+}

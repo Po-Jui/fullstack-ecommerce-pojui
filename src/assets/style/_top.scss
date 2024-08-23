@@ -1,0 +1,24 @@
+.top {
+  transition: all 0.6s;
+  position: fixed;
+  bottom: 35px;
+  right: 0px;
+  z-index: 999;
+  a {
+    position: relative;
+    background: #444846;
+    padding: 10px 20px;
+    border-radius: 10px 0px 0px 10px;
+    color: aliceblue;
+    &:hover {
+      background: $light;
+      color: $dark;
+    }
+  }
+  .fa-angle-up {
+    position: absolute;
+    top: 7px;
+    left: 12px;
+    font-size: 28px;
+  }
+}
