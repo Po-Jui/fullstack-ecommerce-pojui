@@ -242,13 +242,13 @@ Node.js 版本建議為：`14.17.6` 以上...
 ### 取得專案
 
 ```bash
-git clone https://github.com/Po-Jui/vue3-ecommerce-pojui.git
+git clone https://github.com/Po-Jui/fullstack-ecommerce-pojui.git
 ```
 
 ### 移動到專案內
 
 ```bash
-cd vue3-ecommerce-pojui
+cd fullstack-ecommerce-pojui
 ```
 
 ### 安裝套件
@@ -262,7 +262,7 @@ npm install
 > 請自行創建 `.env` 檔案，並依據下方內容調整相關欄位。
 
 ```
-# Firebase (申請後會給)
+# 儲存前台使用者相關資訊用
 VUE_APP_FIREBASE_API_KEY = Firebase API 金鑰
 VUE_APP_FIREBASE_AUTH_DOMAIN = Firebase 認證域名
 VUE_APP_FIREBASE_PROJECT_ID = Firebase 專案 ID
@@ -270,6 +270,15 @@ VUE_APP_FIREBASE_STORAGE_BUCKET = Firebase 儲存空間
 VUE_APP_FIREBASE_MESSAGING_SENDER_ID = Firebase 訊息發送者 ID
 VUE_APP_FIREBASE_APP_ID = Firebase 應用程式 ID
 VUE_APP_FIREBASE_MEASUREMENT_ID = Firebase 測量 ID
+
+# 後台登入傳送idTOKEN用
+VUE_APP_FIREBASE_API_KEY_BACKEND = ""
+VUE_APP_FIREBASE_AUTH_DOMAIN_BACKEND = ""
+VUE_APP_FIREBASE_PROJECT_ID_BACKEND = ""
+VUE_APP_FIREBASE_STORAGE_BUCKET_BACKEND = ""
+VUE_APP_FIREBASE_MESSAGING_SENDER_ID_BACKEND = ""
+VUE_APP_FIREBASE_APP_ID_BACKEND = ""
+VUE_APP_FIREBASE_MEASUREMENT_ID_BACKEND = ""
 
 # 後端 API
 VUE_APP_CUSTOM_API = 後端 API URL
