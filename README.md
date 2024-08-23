@@ -259,10 +259,10 @@ npm install
 
 ### 環境變數設定
 
-請自行創建 `.env` 檔案，並依據下方內容調整相關欄位。
+> 請自行創建 `.env` 檔案，並依據下方內容調整相關欄位。
 
+```
 # Firebase (申請後會給)
-
 VUE_APP_FIREBASE_API_KEY = Firebase API 金鑰
 VUE_APP_FIREBASE_AUTH_DOMAIN = Firebase 認證域名
 VUE_APP_FIREBASE_PROJECT_ID = Firebase 專案 ID
@@ -272,11 +272,9 @@ VUE_APP_FIREBASE_APP_ID = Firebase 應用程式 ID
 VUE_APP_FIREBASE_MEASUREMENT_ID = Firebase 測量 ID
 
 # 後端 API
-
 VUE_APP_CUSTOM_API = 後端 API URL
 ...
-
-````
+```
 
 ### Firebase 設定
 
@@ -287,7 +285,7 @@ VUE_APP_CUSTOM_API = 後端 API URL
 
 ```bash
 npm run serve
-````
+```
 
 ### 開啟專案
 
