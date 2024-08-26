@@ -5,13 +5,16 @@
    <h1>fullstack-ecommerce-pojui 電商網站</h1>
 </div>
 
-fullstack-ecommerce-pojui 是一個基於 Vue.js + Express.js + Firebase 建構而成的電子商務網站，該專案為原 vue3-ecommerce-pojui 專案的升級版，支援 RWD，UI 皆以 SCSS 並遵循 OOCSS 手刻而成，強調樣式的模組化及可重用性，平台使用者主要可分為管理員 (admin)、會員 (member) 兩種身分，管理員可依照主題快速擴展商店，會員可透過前台購物功能進行消費等行為。
+fullstack-ecommerce-pojui 是一個基於 Vue.js + Express.js + Firebase 建構而成的電子商務網站，該專案為原 [vue3-ecommerce-pojui](https://github.com/Po-Jui/vue3-ecommerce-pojui) 專案的升級版，支援 RWD，UI 皆以 SCSS 並遵循 OOCSS 手刻而成，強調樣式的模組化及可重用性，平台使用者主要可分為管理員 (admin)、會員 (member) 兩種身分，管理員可依照主題快速擴展商店，會員可透過前台購物功能進行消費等行為。
 
 ## 線上演示
 
 - Demo：https://fullstack-ecommerce-pojui.zeabur.app/
-- 備用 Demo 網址：https://po-jui.github.io/fullstack-ecommerce-pojui/
 - API Doc：https://github.com/Po-Jui/fullstack-ecommerce-pojui-backend
+
+## 更新日誌
+
+- 2024/08/27：完成藍新金流串接 ✔
 
 ## 設計說明
 
