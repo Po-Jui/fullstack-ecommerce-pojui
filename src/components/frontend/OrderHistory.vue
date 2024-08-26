@@ -3,8 +3,11 @@
     <v-data-table
       :headers="headers"
       :items="filteredOrders"
-      :items-per-page="5"
       class="elevation-1"
+      :items-per-page="5"
+      :footer-props="{
+        itemsPerPageOptions: [],
+      }"
     >
       <template #top>
         <v-card-text>
@@ -121,5 +124,8 @@ export default {
   &:hover {
     text-decoration: underline;
   }
+}
+:deep(.v-data-table-footer__items-per-page) {
+  display: none;
 }
 </style>

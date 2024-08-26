@@ -144,8 +144,14 @@
                   class="btn btn-outline-dark border-0 font-weight-bolder"
                   @click.prevent="payOrder()"
                 >
-                  確認付款
+                  前往結帳
                 </button>
+                <!-- <button
+                  class="btn btn-outline-dark border-0 font-weight-bolder"
+                  @click.prevent="mockPay()"
+                >
+                  測試
+                </button> -->
               </div>
               <v-dialog v-model="loading" hide-overlay persistent max-width="300">
                 <v-card>
@@ -175,6 +181,7 @@
 import Successful from "@/components/frontend/Successful.vue";
 import Toast from "@/alert/Toast";
 import { db } from "@/methods/firebase";
+import { dbBack } from "@/methods/firebase-backend";
 import { collection, doc, getDoc, getDocs, updateDoc } from "firebase/firestore";
 
 export default {
@@ -185,18 +192,30 @@ export default {
       isLoading: false,
       isProcessing: false,
       loading: false,
+      orderDataTemp: {},
     };
   },
   components: {
     Successful,
   },
-  created() {
+  async created() {
     this.orderId = this.$route.params.orderId;
-    this.getOrder(this.orderId);
+    await this.getOrder(this.orderId);
+    this.fetchOrdersData(this.orderId);
+  },
+  watch: {
+    "order.is_paid"(newVal, oldVal) {
+      if (newVal === true) {
+        this.order.is_paid = true;
+        console.log("訂單已支付");
+        // 在這裡可以執行其他需要在支付完成後的邏輯
+      }
+    },
   },
   methods: {
     async getOrder(orderId) {
       this.isLoading = true;
+      const url = `${process.env.VUE_APP_CUSTOM_API}createOrder`;
       const orderDoc = doc(db, "orderInfo", orderId);
       const orderDocSnap = await getDoc(orderDoc);
       if (orderDocSnap.exists()) {
@@ -212,7 +231,17 @@ export default {
           ...orderData,
           cartInfo: { ...subCollectionData },
         };
-        console.log(this.order);
+        const orderTemp = {
+          Email: this.order.user.email,
+          Amt: this.order.cartTotal,
+          ItemDesc: "蠟燭及香氛相關商品",
+          MerchantOrderNo: this.orderId,
+        };
+        await this.$http.post(url, orderTemp).then((res) => {
+          if (res.data.success) {
+            this.orderDataTemp = { ...res.data.data };
+          }
+        });
         this.isLoading = false;
       } else {
         console.log("No such document!");
@@ -225,56 +254,103 @@ export default {
     },
     payOrder() {
       this.loading = true;
-      const url = `${process.env.VUE_APP_CUSTOM_API}pay/${this.orderId}`;
-      this.isProcessing = true;
-      // 模擬結帳過程
       setTimeout(() => {
-        this.$http
-          .post(url)
-          .then((res) => {
-            const timestamp = Math.floor(new Date().getTime() / 1000); // 獲取當前timestamp
-            if (res.data.success) {
-              this.fetchUserData(timestamp);
-              setTimeout(() => {
-                this.getOrder(this.orderId);
-              }, 1000);
-              this.loading = false;
-              Toast.fire({
-                title: "付款成功",
-                icon: "success",
-              });
-            }
-            this.isProcessing = false;
-          })
-          .catch(() => {
-            Toast.fire({
-              title: "付款失敗，請稍後再試",
-              icon: "error",
-            });
-            this.isProcessing = false;
-          });
+        this.orderDataTemp = {
+          ...this.orderDataTemp,
+          MerchantID: process.env.VUE_APP_MERCHANT_ID,
+          Version: process.env.VUE_APP_VERSION,
+        };
+
+        let form = document.createElement("form");
+        form.method = "POST";
+        form.action = process.env.VUE_APP_PAY_GATEWAY; // 測試環境
+
+        for (const key in this.orderDataTemp) {
+          if (this.orderDataTemp.hasOwnProperty(key)) {
+            const hiddenField = document.createElement("input");
+            hiddenField.type = "hidden";
+            hiddenField.name = key;
+            hiddenField.value = this.orderDataTemp[key];
+            form.appendChild(hiddenField);
+          }
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+
+        this.loading = false; // 將 this.loading = false 放在 setTimeout 內部
       }, 3000);
     },
+    //   mockPay() {
+    //   this.loading = true;
+    //   const url = `${process.env.VUE_APP_CUSTOM_API}pay/${this.orderId}`;
+    //   this.isProcessing = true;
+    //   // 模擬結帳過程
+    //   setTimeout(() => {
+    //     this.$http
+    //       .post(url)
+    //       .then((res) => {
+    //         const timestamp = Math.floor(new Date().getTime() / 1000); // 獲取當前timestamp
+    //         if (res.data.success) {
+    //           this.fetchUserData(timestamp);
+    //           setTimeout(() => {
+    //             this.getOrder(this.orderId);
+    //           }, 1000);
+    //           this.loading = false;
+    //           Toast.fire({
+    //             title: "付款成功",
+    //             icon: "success",
+    //           });
+    //         }
+    //         this.isProcessing = false;
+    //       })
+    //       .catch(() => {
+    //         Toast.fire({
+    //           title: "付款失敗，請稍後再試",
+    //           icon: "error",
+    //         });
+    //         this.isProcessing = false;
+    //       });
+    //   }, 3000);
+    // },
+    async fetchOrdersData(id) {
+      // 指定集合和文檔 ID
+      const orderRef = doc(dbBack, "orders", id);
+      const orderDocSnap = await getDoc(orderRef);
+      if (orderDocSnap.exists()) {
+        const orderDataBack = orderDocSnap.data();
+        if (orderDataBack.is_paid === true && orderDataBack.hasOwnProperty("paid_date")) {
+          const timestamp = orderDataBack.paid_date;
+          this.fetchUserData(timestamp);
+          this.getOrder(this.orderId);
+        }
+      }
+    },
+    // 付款後更新資料
     async fetchUserData(timestamp) {
       // 指定集合和文檔 ID
-      const orderRef = doc(db, "orderInfo", this.orderId);
-      const userRef = doc(db, "userInfo", this.order.uid);
-      const userDocSnap = await getDoc(userRef);
-      const userData = userDocSnap.data();
-      await updateDoc(orderRef, {
-        is_paid: true,
-        paid_date: timestamp,
-      });
-      userData.orders.forEach((order) => {
-        if (order.orderId === this.orderId) {
-          order.is_paid = true;
-          order.paid_date = timestamp;
-          // 更新 userInfo 文檔
-          updateDoc(userRef, {
-            orders: userData.orders,
-          });
-        }
-      });
+      try {
+        const orderRef = doc(db, "orderInfo", this.orderId);
+        const userRef = doc(db, "userInfo", this.order.uid);
+        const userDocSnap = await getDoc(userRef);
+        const userData = userDocSnap.data();
+        await updateDoc(orderRef, {
+          is_paid: true,
+          paid_date: timestamp,
+        });
+        userData.orders.forEach((order) => {
+          if (order.orderId === this.orderId) {
+            order.is_paid = true;
+            order.paid_date = timestamp;
+            // 更新 userInfo 文檔
+            updateDoc(userRef, {
+              orders: userData.orders,
+            });
+          }
+        });
+      } catch (error) {
+        console.error("Error updating document: ", error);
+      }
     },
     comeBack() {
       this.$router.push("/");

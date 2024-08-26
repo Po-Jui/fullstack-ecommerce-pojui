@@ -1,5 +1,6 @@
 import { initializeApp, getApps } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 // 後端 Firebase 配置
 const firebaseConfigBackend = {
@@ -25,6 +26,8 @@ if (!getApps().length) {
 
 // 初始化驗證
 const authBack = getAuth(firebaseAppBackend);
+// 啟用資料庫
+const dbBack = getFirestore(firebaseAppBackend);
 
 // 輸出
-export { authBack };
+export { authBack, dbBack };
