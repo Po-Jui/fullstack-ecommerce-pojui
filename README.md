@@ -54,7 +54,6 @@ fullstack-ecommerce-pojui 是一個基於 Vue.js + Express.js + Firebase 建構�
 
 2. 後端
 
-   - Prettier
    - Node.js / Express.js
    - Firebase
    - Cookie
@@ -193,7 +192,7 @@ https://github.com/user-attachments/assets/6b0d3bcd-6bc0-4a48-947c-500e40d78226
 
 - 會員功能 - 結帳付款 (模擬付款) - 實際畫面
 
-![會員功能(結帳付款)](https://imgur.com/ab6mTV9.gif)
+https://github.com/user-attachments/assets/e4563968-9455-4b67-9a4d-7be4750260df
 
 - 會員功能 - 會員中心 - 歷史訂單查詢 - 訂單資訊 - 實際畫面
 
