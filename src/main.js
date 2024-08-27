@@ -39,9 +39,6 @@ app.config.globalProperties.$filters = {
 // 正常來說不建議太多方法掛 Global，這裡可以使用 provide 來處理
 app.config.globalProperties.$emitter = $emitter;
 
-// 禁用 Vue 警告
-app.config.silent = true;
-
 app.use(VueAxios, axios);
 app.use(router);
 app.use(VueSweetalert2); // 在app中註冊使用SweetAlert
