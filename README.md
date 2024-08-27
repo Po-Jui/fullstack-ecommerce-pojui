@@ -18,7 +18,7 @@ fullstack-ecommerce-pojui 是一個基於 Vue.js + Express.js + Firebase 建構�
 
 ## 設計說明
 
-這個專案使用 Vue 3 結合 Firebase 雲端資料庫，主要目的是練習串接自製的後端 API 與資料庫操作，同時強化和更新前後端框架的應用知識。其中 Firebase 資料庫負責儲存會員和訂單資訊。專案中採用了 Bootstrap 5 和 Vuetify 3 作為 UI 框架，並且支援響應式網頁設計 (RWD)。
+這個專案使用 Vue 3 + Express 結合 Firebase 雲端資料庫，主要目的是練習串接自製的後端 API 與資料庫操作，同時強化和更新前後端框架的應用知識。其中 Firebase 資料庫負責儲存會員和訂單資訊。專案中採用了 Bootstrap 5 和 Vuetify 3 作為 UI 框架，並且支援響應式網頁設計 (RWD)。
 
 - 管理員後台功能 (商品管理、訂單管理、優惠卷管理) ✔
 - 會員前台購物功能 (購物車、結帳付款、歷史訂單、修改個人資料) ✔
