@@ -9,7 +9,6 @@ module.exports = defineConfig({
   },
 
   lintOnSave: false,
-  silent: true, // 避免 console.log (production下使用)
 
   configureWebpack: {
     plugins: [
