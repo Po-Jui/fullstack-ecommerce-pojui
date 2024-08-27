@@ -284,6 +284,13 @@ VUE_APP_FIREBASE_MEASUREMENT_ID_BACKEND = ""
 
 # 後端 API
 VUE_APP_CUSTOM_API = 後端 API URL
+
+# 藍新金流資訊
+VUE_APP_MERCHANT_ID = 商店ID
+VUE_APP_VERSION = 版本號
+
+# 測試機、正式機 API 路徑 (下方為測試機網址)
+VUE_APP_PAY_GATEWAY = https://ccore.newebpay.com/MPG/mpg_gateway
 ...
 ```
 
