@@ -37,7 +37,7 @@
             </a>
           </li>
           <li>
-            <a href="https://github.com/Po-Jui/vue3-ecommerce-pojui/tree/main" target="_blank">
+            <a href="https://github.com/Po-Jui/fullstack-ecommerce-pojui" target="_blank">
               <i class="fab fa-github fa-2x"></i>
             </a>
           </li>
