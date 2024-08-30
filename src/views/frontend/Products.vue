@@ -24,7 +24,12 @@
                 </v-menu>
               </v-select>
             </div>
-            <li class="list-group-item p-xy-0 des-list-group" v-for="item in category" :key="item">
+            <li
+              class="list-group-item p-xy-0 des-list-group"
+              v-for="item in category"
+              :key="item"
+              v-if="products !== []"
+            >
               <a
                 data-toggle="tab"
                 href="#"
@@ -135,7 +140,7 @@ export default {
       category: ["全部商品", "香氛蠟燭", "擴香", "精油", "其他"],
       isActive: false,
       filterType: "",
-      products: {},
+      products: [],
       sortData: "",
       followData: [],
       pagination: {},
