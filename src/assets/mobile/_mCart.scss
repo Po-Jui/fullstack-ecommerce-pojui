@@ -279,3 +279,72 @@
     padding-right: 1em !important;
   }
 }
+
+@include iphone() {
+  .modal-header {
+    .modal-title,
+    .fa-times {
+      font-size: 20px;
+    }
+  }
+  .modal-body {
+    h4 {
+      font-size: 20px;
+    }
+    table,
+    p {
+      font-size: 16px;
+    }
+  }
+  .modal-footer {
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-header {
+    .modal-title,
+    .fa-times {
+      font-size: 18px;
+    }
+  }
+  .modal-body {
+    h4 {
+      font-size: 18px;
+    }
+    table,
+    p {
+      font-size: 14px;
+    }
+  }
+  .modal-footer {
+    p {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .modal-header {
+    .modal-title,
+    .fa-times {
+      font-size: 16px;
+    }
+  }
+  .modal-body {
+    h4 {
+      font-size: 16px;
+    }
+    table,
+    p {
+      font-size: 12px;
+    }
+  }
+  .modal-footer {
+    p {
+      font-size: 10px;
+    }
+  }
+}
