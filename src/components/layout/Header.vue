@@ -19,7 +19,7 @@
             <a href="#" class="m-close" id="m-close" @click.prevent="closeMenu">
               <i class="fas fa-times"></i>
             </a>
-            <ul class="m-menu">
+            <ul class="m-menu mt-3">
               <li>
                 <router-link to="/">首頁</router-link>
               </li>
