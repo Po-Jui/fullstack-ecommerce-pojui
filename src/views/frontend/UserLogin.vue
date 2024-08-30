@@ -269,11 +269,9 @@ export default {
   watch: {
     isLogin(newVal, oldVal) {
       if (newVal) {
-        // this.updateCartItem(this.uid);
-        console.log("User is logged in with UID:", newVal);
-        // this.updateUserCartItem(); // 可以在這裡調用更新購物車方法
+        // console.log("User is logged in with UID:", newVal);
       } else {
-        console.log("User is logged out or email is not verified");
+        // console.log("User is logged out or email is not verified");
         // 在這裡處理用戶登出或未驗證的情況
       }
     },
@@ -282,7 +280,6 @@ export default {
     this.isLoading = true;
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log("user:", user);
         if (user.emailVerified) {
           this.isLogin = true;
           this.uid = user.uid;

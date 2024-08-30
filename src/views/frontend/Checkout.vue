@@ -207,7 +207,6 @@ export default {
     "order.is_paid"(newVal, oldVal) {
       if (newVal === true) {
         this.order.is_paid = true;
-        console.log("訂單已支付");
         // 在這裡可以執行其他需要在支付完成後的邏輯
       }
     },

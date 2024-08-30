@@ -245,7 +245,6 @@ export default {
       const formData = new FormData();
       formData.append("file", uploadedFile);
       const url = `${process.env.VUE_APP_CUSTOM_API}admin/upload/image`;
-      console.log(formData);
       this.$http
         .post(url, formData)
         .then((response) => {

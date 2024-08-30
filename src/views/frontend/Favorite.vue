@@ -209,11 +209,10 @@ export default {
   watch: {
     uid(newVal, oldVal) {
       if (newVal) {
-        console.log("User is logged in with UID:", newVal);
+        // console.log("User is logged in with UID:", newVal);
         this.getProducts();
-        // this.updateUserCartItem(); // 可以在這裡調用更新購物車方法
       } else {
-        console.log("User is logged out or email is not verified");
+        // console.log("User is logged out or email is not verified");
         // 在這裡處理用戶登出或未驗證的情況
         this.$router.replace("/userlogin");
       }
@@ -240,7 +239,6 @@ export default {
       });
     },
     async updateUserCartItem(item) {
-      // console.log(item);
       const userRef = collection(db, "userInfo");
       const userDocRef = doc(userRef, this.uid);
       const docSnap = await getDoc(userDocRef);
@@ -256,7 +254,6 @@ export default {
             cartItem: this.userCartItems,
           });
         }
-        console.log("userCartItems:", this.userCartItems);
       } else {
         // doc.data() will be undefined in this case
         console.log("No such document!");
@@ -290,7 +287,6 @@ export default {
       const docSnap = await getDoc(userDocRef);
       if (docSnap.exists()) {
         this.followData = docSnap.data().favorite;
-        console.log("followData:", this.followData);
       }
       this.followProduct = this.products.filter((item) => this.followData.indexOf(item.id) > -1);
     },

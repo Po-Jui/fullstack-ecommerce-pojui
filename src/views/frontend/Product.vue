@@ -193,7 +193,6 @@ export default {
         if (user) {
           if (user.emailVerified) {
             this.uid = user.uid;
-            // console.log(this.uid);
             this.updateUserCartItem();
           }
         }
@@ -243,7 +242,6 @@ export default {
       await this.$http
         .get(api)
         .then((response) => {
-          console.log(response.data);
           this.isLoading = false;
           if (response.data.success === true) {
             this.product = response.data.product;

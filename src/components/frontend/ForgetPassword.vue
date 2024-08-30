@@ -38,7 +38,6 @@ export default {
   methods: {
     findPassword() {
       this.$refs.forgetPassword.validate().then((res) => {
-        console.log(res);
         if (res.length > 0) {
           Toast.fire({
             icon: "error",

@@ -92,7 +92,6 @@ export default {
         .then((response) => {
           this.orders = response.data.orders;
           this.pagination = response.data.pagination;
-          console.log(this.pagination);
           this.isLoading = false;
         })
         .catch(() => {
@@ -261,7 +260,6 @@ export default {
       this.$http
         .delete(url, { headers: { Authorization: `Bearer ${this.token}` } })
         .then((response) => {
-          console.log(response);
           this.getOrders(this.currentPage);
         });
     },

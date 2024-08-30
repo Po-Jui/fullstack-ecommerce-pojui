@@ -214,10 +214,9 @@ export default {
   watch: {
     uid(newVal, oldVal) {
       if (newVal) {
-        console.log("User is logged in with UID:", newVal);
-        // this.updateUserCartItem(); // 可以在這裡調用更新購物車方法
+        // console.log("User is logged in with UID:", newVal);
       } else {
-        console.log("User is logged out or email is not verified");
+        // console.log("User is logged out or email is not verified");
         // 在這裡處理用戶登出或未驗證的情況
         this.$router.replace("/userlogin");
       }
@@ -261,7 +260,6 @@ export default {
       }
     },
     getCart(uid) {
-      // console.log(uid);
       const url = `${process.env.VUE_APP_CUSTOM_API}cart/${uid}`;
       this.isLoading = true;
       setTimeout(() => {
@@ -307,7 +305,6 @@ export default {
             qty: num,
           };
           this.$http.put(url, { data: cart }).then((response) => {
-            console.log(response);
             this.getCart(this.uid);
             this.isLoading = false;
           });

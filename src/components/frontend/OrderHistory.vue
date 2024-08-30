@@ -110,7 +110,6 @@ export default {
     },
     viewOrder(item) {
       // 處理查看訂單的邏輯
-      console.log("查看訂單", item.orderId);
       this.$router.push(`/checkout/${item.orderId}`);
     },
   },

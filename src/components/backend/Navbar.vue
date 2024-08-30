@@ -122,7 +122,6 @@ export default {
             /(?:(?:^|.*;\s*)customToken\s*=\s*([^;]*).*$)|^.*$/,
             "$1"
           );
-          // console.log(token);
           if (token !== "") {
             const api = `${process.env.VUE_APP_CUSTOM_API}admin/logout`;
             this.$http

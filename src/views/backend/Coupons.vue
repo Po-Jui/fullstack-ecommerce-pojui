@@ -135,7 +135,6 @@ export default {
         this.$http
           .post(url, { data: tempCoupon }, { headers: { Authorization: `Bearer ${this.token}` } })
           .then((response) => {
-            console.log(response, tempCoupon);
             if (response.data.success) {
               Toast.fire({
                 icon: "success",
@@ -147,7 +146,6 @@ export default {
           })
           .catch((error) => {
             // error.response.data.message 重新format
-            console.log(error.response.data.message);
             const replacements = {
               title: "標題",
               percent: "折扣百分比",
@@ -194,7 +192,6 @@ export default {
             { headers: { Authorization: `Bearer ${this.token}` } }
           )
           .then((response) => {
-            console.log(response);
             Toast.fire({
               icon: "success",
               title: "更新優惠券成功",
@@ -210,7 +207,6 @@ export default {
       this.$http
         .delete(url, { headers: { Authorization: `Bearer ${this.token}` } })
         .then((response) => {
-          console.log(response, this.tempCoupon);
           this.getCoupons();
           Toast.fire({
             icon: "success",

@@ -96,7 +96,6 @@ export default {
             if (res.data.success) {
               this.products = res.data.products;
               this.pagination = res.data.pagination;
-              console.log(this.pagination);
             }
           })
           .catch(() => {
@@ -147,7 +146,6 @@ export default {
           }
         })
         .catch((error) => {
-          // console.log(error.response.data.message);
           // error.response.data.message 重新format
           const replacements = {
             title: "標題",
