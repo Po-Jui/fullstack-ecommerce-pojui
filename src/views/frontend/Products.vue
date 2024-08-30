@@ -43,7 +43,7 @@
           </ul>
         </nav>
         <div class="col-md-9 position-relative">
-          <div class="sortData-box-product">
+          <div class="sortData-box-product" v-if="products !== []">
             <span>{{ getFilter.length }} 個商品</span>
             <select
               name="sortData"
@@ -51,7 +51,6 @@
               v-model="sortData"
               class="form-control sortData-product mb-3"
               @change="sortProducts()"
-              v-if="products !== []"
             >
               <option value="" disabled>商品排序</option>
               <option value="highToLow">價格由高至低</option>
