@@ -160,19 +160,19 @@
                         </td>
                       </tr>
                       <tr>
-                        <th scope="row" class="border-0 p-0">顧客姓名</th>
+                        <th scope="row" class="border-0 p-0">姓名</th>
                         <td class="text-right border-0 p-0">
                           {{ user.name }}
                         </td>
                       </tr>
                       <tr>
-                        <th scope="row" class="border-0 px-0">顧客電話</th>
+                        <th scope="row" class="border-0 px-0">電話</th>
                         <td class="text-right border-0 px-0">
                           {{ user.tel }}
                         </td>
                       </tr>
                       <tr>
-                        <th scope="row" class="border-0 p-0">顧客地址</th>
+                        <th scope="row" class="border-0 p-0">地址</th>
                         <td class="text-right border-0 p-0">
                           {{ user.address }}
                         </td>
