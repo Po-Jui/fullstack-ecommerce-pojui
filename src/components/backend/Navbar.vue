@@ -1,5 +1,6 @@
 <template>
   <v-app-bar app dark>
+    <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     <v-toolbar-title class="logo d-flex align-center">
       <v-list-item :prepend-avatar="logo" class="d-flex align-items-center">
         <v-list-item-title>Belle journée</v-list-item-title>
@@ -46,8 +47,8 @@
   <v-navigation-drawer
     image="https://st4.depositphotos.com/13349494/22978/i/600/depositphotos_229787416-stock-photo-abstract-splash-grey-paint-black.jpg"
     theme="dark"
-    permanent
     app
+    v-model="drawer"
   >
     <v-list nav>
       <router-link v-for="item in items" :to="item.route">
@@ -85,6 +86,7 @@ export default {
     return {
       logo,
       menu: false,
+      drawer: true,
       activeItem: "",
       items: [
         { title: "產品", value: "products", route: "/dashboard/products", icon: "mdi-file" },
