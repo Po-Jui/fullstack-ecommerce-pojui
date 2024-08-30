@@ -12,7 +12,7 @@
               <i class="fa-solid fa-user ml-1 mt-3 fa-2x"></i>
               <span class="ml-3">未登入</span>
             </router-link>
-            <router-link to="/userlogin" class="m-user" v-else>
+            <router-link to="/userlogin" class="m-user mb-3" v-else>
               <img :src="member.image ? member.image : noUserPhoto" alt="" class="mr-2" />
               {{ truncate(displayName) }} 您好
             </router-link>
