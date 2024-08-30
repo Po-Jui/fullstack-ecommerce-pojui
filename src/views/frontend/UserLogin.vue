@@ -105,7 +105,7 @@
     </div>
     <div class="container user-login-box my-5" v-else>
       <div class="row">
-        <div class="col-lg-4 col-md-8 mx-auto">
+        <div class="col-lg-4 col-md-8 mx-auto d-flex align-items-center justify-content-center">
           <loading :active.sync="isLoading">
             <i class="loading-box"></i>
           </loading>
