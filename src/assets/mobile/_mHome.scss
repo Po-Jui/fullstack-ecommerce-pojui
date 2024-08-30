@@ -107,9 +107,20 @@
     }
   }
 }
+
+@media (max-width: 410px) {
+  .banner-tit-box {
+    .banner-tit {
+      font-size: 18px !important;
+    }
+  }
+}
 @include other() {
   .banner-tit-box {
-    top: 100px !important;
+    // .banner-tit {
+    //   font-size: 18px !important;
+    // }
+    top: 150px !important;
     left: 20px !important;
   }
 }

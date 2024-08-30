@@ -4,7 +4,7 @@
       <h2 v-if="isLogin" class="text-center">會員中心</h2>
       <h2 v-else class="text-center">會員登入</h2>
     </div>
-    <div class="container user-member-box" v-if="isLogin">
+    <div class="container user-member-box mb-5" v-if="isLogin">
       <div class="row">
         <div class="col-lg-6 col-md-12 mx-auto mt-3">
           <v-tabs class="mt-3" v-model="tab" grow align-tabs="center" color="light-blue-accent-4">
