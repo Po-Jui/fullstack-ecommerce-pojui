@@ -32,7 +32,7 @@
       <div class="icon-box text-right">
         <ul class="py-2 d-flex justify-content-between">
           <li>
-            <a href="#">
+            <a href="https://www.instagram.com/pojui0607/" target="_blank">
               <i class="fab fa-instagram fa-2x"></i>
             </a>
           </li>
@@ -42,7 +42,7 @@
             </a>
           </li>
           <li>
-            <a href="#" target="_blank">
+            <a href="https://www.facebook.com/pojui.chen.75/" target="_blank">
               <i class="fab fa-facebook-square fa-2x"></i>
             </a>
           </li>
