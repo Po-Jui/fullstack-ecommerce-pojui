@@ -12,19 +12,43 @@
             <v-tab :value="1" class="font-weight-bold">歷史訂單查詢</v-tab>
             <v-tab :value="2" class="font-weight-bold" v-if="tabCtrl">修改密碼</v-tab>
           </v-tabs>
-          <v-tabs-window v-model="tab"
-            ><v-tabs-window-item :value="0">
+          <v-tabs-window v-model="tab">
+            <v-tabs-window-item :value="0">
               <v-container fluid>
                 <v-form v-model="valid" ref="profileForm">
-                  <!-- 圖片預覽 -->
-                  <div @click="triggerFileInput" style="width: 100px">
-                    <v-img v-if="member.image" :src="member.image" class="my-4 profile-img"></v-img>
-                    <v-img
-                      v-else
-                      src="https://www.iconpacks.net/icons/2/free-user-camera-icon-3355-thumb.png"
-                      class="my-4 profile-img"
-                    ></v-img>
-                  </div>
+                  <!-- 圖片預覽和刪除按鈕的容器 -->
+                  <v-row align="center" justify="center" class="mb-4">
+                    <v-col cols="auto" class="d-flex flex-column align-center">
+                      <div @click="triggerFileInput" style="width: 100px; cursor: pointer">
+                        <v-img
+                          v-if="member.image"
+                          :src="member.image"
+                          class="profile-img"
+                          height="100"
+                          width="100"
+                          contain
+                        ></v-img>
+                        <v-img
+                          v-else
+                          src="https://www.iconpacks.net/icons/2/free-user-camera-icon-3355-thumb.png"
+                          class="profile-img"
+                          height="100"
+                          width="100"
+                          contain
+                        ></v-img>
+                      </div>
+                      <v-btn
+                        color="red"
+                        v-if="member.image"
+                        @click="removeImage"
+                        class="mt-2"
+                        small
+                      >
+                        刪除圖片
+                      </v-btn>
+                    </v-col>
+                  </v-row>
+
                   <!-- 隱藏的文件輸入 -->
                   <v-file-input
                     ref="fileInput"
@@ -33,9 +57,7 @@
                     accept="image/*"
                     @change="onImageChange"
                   ></v-file-input>
-                  <v-btn color="red" v-if="member.image" @click="removeImage" class="mb-3">
-                    刪除圖片
-                  </v-btn>
+
                   <v-text-field
                     prepend-icon="mdi-account"
                     v-model.trim="member.name"
@@ -51,6 +73,7 @@
                       </div>
                     </template>
                   </v-text-field>
+
                   <v-text-field
                     prepend-icon="mdi-email"
                     v-model.trim="member.email"
@@ -63,8 +86,9 @@
                         已驗證
                       </v-btn>
                       <v-btn color="success" v-if="tabCtrl"> 已驗證 </v-btn>
-                    </template></v-text-field
-                  >
+                    </template>
+                  </v-text-field>
+
                   <v-text-field
                     prepend-icon="mdi-cellphone"
                     v-model.trim="member.phone"
@@ -80,6 +104,7 @@
                       </div>
                     </template>
                   </v-text-field>
+
                   <v-text-field
                     prepend-icon="mdi-map-marker"
                     v-model.trim="member.address"
@@ -88,11 +113,13 @@
                     placeholder="請輸入地址"
                     required
                   ></v-text-field>
+
                   <v-btn class="mb-3 w-100" color="primary" @click="updateMember"> 確認修改 </v-btn>
                   <v-btn block color="danger" @click="logout">登出</v-btn>
-                </v-form></v-container
-              ></v-tabs-window-item
-            >
+                </v-form>
+              </v-container>
+            </v-tabs-window-item>
+
             <v-tabs-window-item :value="1"
               ><v-container fluid><OrderHistory :ordersInfo="propsItem" /></v-container>
             </v-tabs-window-item>
