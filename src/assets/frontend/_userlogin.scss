@@ -58,3 +58,16 @@
   position: relative;
   border-radius: 10px;
 }
+
+.table-list {
+  display: none !important;
+}
+
+@include pad() {
+  .table-order {
+    display: none !important;
+  }
+  .table-list {
+    display: block !important;
+  }
+}
