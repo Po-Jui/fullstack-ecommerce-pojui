@@ -28,7 +28,10 @@
       </template>
       <template #item.create_at="{ item }">{{ $filters.date(item.create_at) }}</template>
       <template #item.orderId="{ item }">
-        <a @click.prevent="viewOrder(item)" class="order-id">{{ item.orderId }}</a>
+        <a v-if="item.is_paid === true" @click.prevent="viewOrder(item)" class="order-id">{{
+          item.orderId
+        }}</a>
+        <a v-else @click.prevent="viewOrder(item)" class="order-id-no-pay">{{ item.orderId }}</a>
       </template>
       <template #item.cartTotal="{ item }">{{ $filters.currency(item.cartTotal) }}</template>
       <template #item.is_paid="{ item }">
@@ -59,7 +62,7 @@
       <v-card-text>
         <v-row no-gutters>
           <v-col :cols="dateCol">建立日期</v-col>
-          <v-col :cols="orderCol" class="text-left">訂單編號</v-col>
+          <v-col :cols="orderCol" class="text-left">訂單編號 ( 點擊查看 )</v-col>
           <v-col v-show="!isSmallScreen" cols="2" class="text-left">付款狀態</v-col>
         </v-row>
       </v-card-text>
@@ -73,7 +76,12 @@
                 {{ $filters.date(item.create_at) }}
               </v-col>
               <v-col :cols="orderCol" class="text-left">
-                <a @click.prevent="viewOrder(item)" class="order-id">{{ item.orderId }}</a>
+                <a v-if="item.is_paid === true" @click.prevent="viewOrder(item)" class="order-id">{{
+                  item.orderId
+                }}</a>
+                <a v-else @click.prevent="viewOrder(item)" class="order-id-no-pay">{{
+                  item.orderId
+                }}</a>
               </v-col>
               <v-col v-show="!isSmallScreen" cols="2" class="text-left">
                 <span v-if="item.is_paid === true" class="text-success">已付款</span>
@@ -103,7 +111,7 @@ export default {
       loading: false,
       headers: [
         { title: "訂單日期", key: "create_at" },
-        { title: "訂單編號", key: "orderId", sortable: false },
+        { title: "訂單編號 ( 點擊查看 )", key: "orderId", sortable: false },
         { title: "金額", key: "cartTotal" },
         { title: "付款方式", key: "payment", sortable: false },
         { title: "付款狀態", key: "is_paid", sortable: false },
@@ -181,7 +189,14 @@ export default {
 
 <style lang="scss" scoped>
 .order-id {
-  color: #1976d2;
+  color: rgb(0, 180, 60);
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.order-id-no-pay {
+  color: rgb(215, 60, 60);
   cursor: pointer;
   &:hover {
     text-decoration: underline;
