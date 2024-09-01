@@ -70,7 +70,7 @@
                   >
                     移除
                   </button>
-                  <img class="img-fluid" :src="tempProduct.imagesUrl[key]" alt="" />
+                  <img class="img-fluid mt-2" :src="tempProduct.imagesUrl[key]" alt="" />
                 </div>
 
                 <div
