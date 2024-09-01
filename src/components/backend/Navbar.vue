@@ -9,7 +9,7 @@
         </v-list-item-subtitle>
       </v-list-item>
     </v-toolbar-title>
-    <v-toolbar-items>
+    <v-toolbar-items class="toolbar-items">
       <!-- <v-btn icon>
         <v-icon>mdi-bell</v-icon>
         <v-tooltip activator="parent" location="bottom">通知</v-tooltip>
@@ -100,7 +100,19 @@ export default {
       this.activeItem = value;
     });
   },
+  mounted() {
+    this.checkScreenSize();
+    window.addEventListener("resize", this.checkScreenSize);
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.checkScreenSize);
+  },
   methods: {
+    checkScreenSize() {
+      if (window.innerWidth <= 768) {
+        this.drawer = false;
+      }
+    },
     setActive(value) {
       this.activeItem = value;
     },
@@ -162,5 +174,11 @@ export default {
 }
 .custom-active-color {
   color: #d29e19 !important;
+}
+
+@media (max-width: 430px) {
+  .toolbar-items {
+    display: none;
+  }
 }
 </style>

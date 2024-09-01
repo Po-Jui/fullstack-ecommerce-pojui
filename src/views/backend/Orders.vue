@@ -6,10 +6,10 @@
     <thead class="table-dark">
       <tr>
         <th>購買時間</th>
-        <th>Email</th>
+        <th class="email">Email</th>
         <th>訂單編號</th>
-        <th>應付金額</th>
-        <th>是否付款</th>
+        <th class="cartTotal">應付金額</th>
+        <th class="is_paid">是否付款</th>
         <th>編輯</th>
       </tr>
     </thead>
@@ -17,12 +17,12 @@
       <template v-for="(item, key) in ordersData" :key="key">
         <tr v-if="orders.length" :class="{ 'text-secondary': !item.is_paid }">
           <td>{{ $filters.date(item.create_at) }}</td>
-          <td><span v-text="item.user.email" v-if="item.user"></span></td>
+          <td class="email"><span v-text="item.user.email" v-if="item.user"></span></td>
           <td>
             <span v-text="item.id" v-if="item"></span>
           </td>
-          <td class="text-left">{{ $filters.currency(item.cartTotal) }}</td>
-          <td>
+          <td class="cartTotal text-left">{{ $filters.currency(item.cartTotal) }}</td>
+          <td class="is_paid">
             <div class="form-check form-switch">
               <input
                 class="form-check-input"
@@ -270,3 +270,21 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@media (max-width: 880px) {
+  .email {
+    display: none;
+  }
+}
+@media (max-width: 670px) {
+  .cartTotal {
+    display: none;
+  }
+}
+@media (max-width: 585px) {
+  .is_paid {
+    display: none;
+  }
+}
+</style>

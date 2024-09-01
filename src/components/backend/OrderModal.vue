@@ -23,43 +23,43 @@
         </div>
         <div class="modal-body">
           <div class="row">
-            <div class="col-md-4">
+            <div class="user col-5">
               <h3 class="inner-modal-title">◎ 用戶資料 ◎</h3>
               <table class="table">
                 <tbody v-if="tempOrder.user">
                   <tr>
-                    <th style="width: 100px">姓名 :</th>
+                    <th style="width: 100px">姓名</th>
                     <td>{{ tempOrder.user.name }}</td>
                   </tr>
                   <tr>
-                    <th>Email :</th>
+                    <th>Email</th>
                     <td>{{ tempOrder.user.email }}</td>
                   </tr>
                   <tr>
-                    <th>電話 :</th>
+                    <th>電話</th>
                     <td>{{ tempOrder.user.tel }}</td>
                   </tr>
                   <tr>
-                    <th>地址 :</th>
+                    <th>地址</th>
                     <td>{{ tempOrder.user.address }}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <div class="col-md-8">
+            <div class="order col-7">
               <h3 class="inner-modal-title">◎ 訂單細節 ◎</h3>
               <table class="table">
                 <tbody>
                   <tr>
-                    <th style="width: 100px">訂單編號 :</th>
+                    <th style="width: 100px">訂單編號</th>
                     <td>{{ tempOrder.id }}</td>
                   </tr>
                   <tr>
-                    <th>下單時間 :</th>
+                    <th>下單時間</th>
                     <td>{{ $filters.date(tempOrder.create_at) }} {{ createDateDetail }}</td>
                   </tr>
                   <tr>
-                    <th>付款時間 :</th>
+                    <th>付款時間</th>
                     <td>
                       <span v-if="tempOrder.paid_date !== '' && tempOrder.is_paid === true">
                         {{ $filters.date(tempOrder.paid_date) }} {{ paidDateDetail }}
@@ -68,14 +68,14 @@
                     </td>
                   </tr>
                   <tr>
-                    <th>付款狀態 :</th>
+                    <th>付款狀態</th>
                     <td>
                       <strong v-if="tempOrder.is_paid" class="text-success">已付款</strong>
                       <span v-else class="text-danger">尚未付款</span>
                     </td>
                   </tr>
                   <tr>
-                    <th>優惠券 :</th>
+                    <th>優惠券</th>
                     <td>
                       <strong v-if="tempOrder.isCouponUsed === true" class="text-success">{{
                         tempOrder.products[0].coupon.title
@@ -84,13 +84,13 @@
                     </td>
                   </tr>
                   <tr>
-                    <th>總金額 :</th>
+                    <th>總金額</th>
                     <td>
                       {{ $filters.currency(tempOrder.cartTotal) }}
                     </td>
                   </tr>
                   <tr>
-                    <th>留言 :</th>
+                    <th>留言</th>
                     <td>
                       {{ tempOrder.message }}
                     </td>
@@ -178,5 +178,21 @@ export default {
 .inner-modal-title {
   font-size: 20px;
   font-weight: bold;
+}
+@media (max-width: 992px) {
+  .table {
+    font-size: 16px;
+  }
+  .user {
+    width: 500px;
+  }
+  .order {
+    width: 500px;
+  }
+}
+@media (max-width: 768px) {
+  .table {
+    font-size: 14px;
+  }
 }
 </style>

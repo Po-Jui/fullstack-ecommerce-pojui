@@ -12,26 +12,26 @@
   <table class="table mt-4 text-center">
     <thead class="table-dark text-center">
       <tr>
-        <th width="120" class="text-start">分類</th>
+        <th width="120" class="category text-start">分類</th>
         <th width="240" class="text-start">產品名稱</th>
-        <th width="100" class="text-end">原價</th>
-        <th width="100" class="text-end">售價</th>
-        <th width="100">是否啟用</th>
+        <th width="100" class="origin-price text-end">原價</th>
+        <th width="100" class="price text-end">售價</th>
+        <th width="100" class="is-enabled">是否啟用</th>
         <th width="120">編輯</th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="item in products" :key="item.id">
-        <td class="text-start">{{ item.category }}</td>
+        <td class="category text-start">{{ item.category }}</td>
         <td class="text-start">{{ item.title }}</td>
-        <td class="text-right">
+        <td class="origin-price text-right">
           <!-- 加入千分號 -->
           {{ $filters.currency(item.origin_price) }}
         </td>
-        <td class="text-right">
+        <td class="price text-right">
           {{ $filters.currency(item.price) }}
         </td>
-        <td class="text-center">
+        <td class="is-enabled text-center">
           <span class="text-success" v-if="item.is_enabled">啟用</span>
           <span class="text-muted" v-else>未啟用</span>
         </td>
@@ -225,3 +225,26 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@media (max-width: 768px) {
+  .category {
+    display: none;
+  }
+}
+@media (max-width: 610px) {
+  .origin-price {
+    display: none;
+  }
+}
+@media (max-width: 520px) {
+  .is-enabled {
+    display: none;
+  }
+}
+@media (max-width: 440px) {
+  .price {
+    display: none;
+  }
+}
+</style>

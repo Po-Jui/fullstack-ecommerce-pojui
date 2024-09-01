@@ -51,7 +51,7 @@
               </div>
               <img class="img-fluid" :src="tempProduct.imageUrl" alt="" />
               <!-- 延伸技巧，多圖 -->
-              <div class="mt-5" v-if="tempProduct.imagesUrl">
+              <div class="mt-2 mb-3" v-if="tempProduct.imagesUrl">
                 <div
                   v-for="(image, key) in tempProduct.imagesUrl"
                   class="mb-3 input-group"
