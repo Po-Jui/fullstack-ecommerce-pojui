@@ -1,5 +1,5 @@
 <div align="center">
-   <a href="https://fullstack-ecommerce-pojui.zeabur.app/" title="Belle journée" target="_blank">
+   <a href="https://po-jui.github.io/fullstack-ecommerce-pojui/" title="Belle journée" target="_blank">
       <img src="https://imgur.com/GdDwEDG.png" alt="CandleStudio" width="100">
    </a>
    <h1>fullstack-ecommerce-pojui 電商網站</h1>
@@ -9,7 +9,7 @@ fullstack-ecommerce-pojui 是一個基於 Vue.js + Express.js + Firebase 建構�
 
 ## 線上演示
 
-- Demo：https://fullstack-ecommerce-pojui.zeabur.app/
+- Demo：https://po-jui.github.io/fullstack-ecommerce-pojui/
 - API Doc：https://github.com/Po-Jui/fullstack-ecommerce-pojui-backend
 
 ## 更新日誌
