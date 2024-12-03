@@ -239,6 +239,7 @@ export default {
         this.imgs = [];
       }
       const api = `${process.env.VUE_APP_CUSTOM_API}product/${this.id}`;
+      this.isLoading = true;
       await this.$http
         .get(api)
         .then((response) => {
@@ -267,12 +268,14 @@ export default {
               this.imgs = this.product.imagesUrl;
             }
             this.componentKey += 1;
+            this.isLoading = false;
           } else {
             Toast.fire({
               title: `${response.data.message}`,
               icon: "warning",
             });
             this.$router.replace("/products");
+            this.isLoading = false;
           }
         })
         .catch(() => {
