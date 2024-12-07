@@ -239,11 +239,11 @@ export default {
         this.imgs = [];
       }
       const api = `${process.env.VUE_APP_CUSTOM_API}product/${this.id}`;
-      this.isLoading = true;
+      // this.isLoading = true;
       await this.$http
         .get(api)
         .then((response) => {
-          this.isLoading = false;
+          // this.isLoading = false;
           if (response.data.success === true) {
             this.product = response.data.product;
             if (this.uid !== null) {
@@ -268,18 +268,18 @@ export default {
               this.imgs = this.product.imagesUrl;
             }
             this.componentKey += 1;
-            this.isLoading = false;
+            // this.isLoading = false;
           } else {
             Toast.fire({
               title: `${response.data.message}`,
               icon: "warning",
             });
             this.$router.replace("/products");
-            this.isLoading = false;
+            // this.isLoading = false;
           }
         })
         .catch(() => {
-          this.isLoading = false;
+          // this.isLoading = false;
         });
     },
     addToCart(id, num) {
